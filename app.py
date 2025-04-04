@@ -179,11 +179,11 @@ def main():
             
             with col1:
                 st.subheader("Original Image")
-                st.image(original_image, use_column_width=True)
+                st.image(original_image, use_container_width=True)
             
             with col2:
                 st.subheader(f"Detected {detector_type}s")
-                st.image(processed_image, use_column_width=True)
+                st.image(processed_image, use_container_width=True)
             
             # Display information
             st.subheader("Detection Results")
@@ -240,7 +240,7 @@ def main():
                     frame_rgb = cv2.cvtColor(frame_with_boxes, cv2.COLOR_BGR2RGB)
                     
                     # Display the frame
-                    webcam_placeholder.image(frame_rgb, channels="RGB", use_column_width=True)
+                    webcam_placeholder.image(frame_rgb, channels="RGB", use_container_width=True)
                 
                 # Release the webcam
                 cap.release()
@@ -271,10 +271,10 @@ def main():
             col1, col2 = st.columns(2)
             
             with col1:
-                st.image(proc1, caption=f"Image 1: {len(features1)} {detector_type}(s) detected", use_column_width=True)
+                st.image(proc1, caption=f"Image 1: {len(features1)} {detector_type}(s) detected", use_container_width=True)
             
             with col2:
-                st.image(proc2, caption=f"Image 2: {len(features2)} {detector_type}(s) detected", use_column_width=True)
+                st.image(proc2, caption=f"Image 2: {len(features2)} {detector_type}(s) detected", use_container_width=True)
             
             # Compare features
             st.subheader("Comparison Results")
